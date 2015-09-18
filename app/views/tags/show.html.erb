@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<% if current_user %>
+  <div class="name"> You are logged in as: <%= current_user.first_name %></div>
+  <div class="logout"> <%= link_to 'Log Out', '/logout' %> </div>
+  <div class="home"><%= link_to 'Home', '/' %> </div>
+  <div class="directory"><%= link_to 'Directory', '../users' %> </div>
+<% else %>
+  <div class="home"><%= link_to 'Home', '/' %> </div>
+  <%= link_to 'New User', new_user_path %>
+<% end %>
+
+<br></br>
+
+<p>
+
+  <% @tag.articles.each do |article| %>
+    <tr>
+        <td><%= article.title %></td>
+        <td><%= markdown(article.content) %></td>
+        <td><h4>Published <%= time_ago_in_words article.created_at %> ago by <%= article.user.first_name %></h4></td>
+        <td><h4>Updated <%= time_ago_in_words article.updated_at %> ago by <%= article.user.first_name %></h4></td>
+        <td><%= link_to 'Show', article %></td>
+      <br></br>
+    </tr>
+  <%end%>
+</p>
+
+<%= link_to 'Back', '/articles' %>
