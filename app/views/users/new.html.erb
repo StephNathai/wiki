@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<div class="login_page">
+  <h1>Login In</h1>
+<form action="/login" method="post" class="login_page">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <div>
+    <lable for="email">Email:</label>
+    <input name="email" type="text" />
+  </div>
+  <div>
+    <lable for="password">Password:</label>
+    <input name="password" type="password" />
+  </div>
+  <div>
+    <input type="submit" />
+  </div>
+</form>
+</div>
+<br></br>
+<div>
+
+  <h1>Sign Up</h1>
+
+  <%= render 'form' %>
+
+  <%= link_to 'Back', '/' %>
+</div<

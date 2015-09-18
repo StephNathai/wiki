@@ -1,0 +1,45 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-color: #D9D9DE;
+}
+
+.login {
+  float: right;
+  text-align: right;
+  width: 100%;
+  clear:both;
+  margin-bottom: 2%;
+}
+div.title {
+  text-align: center;
+}
+
+div.table {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+
+}
+
+
+.logout {
+  float: right;
+  position: relative;
+  width: 50%;
+  text-align: right;
+  margin-bottom: 3%;
+}
+.name {
+  position: relative;
+  width: 50%;
+  float: left;
+  clear: both;
+}
+
+div.main {
+  position: relative;
+  margin-top: 3%;
+}

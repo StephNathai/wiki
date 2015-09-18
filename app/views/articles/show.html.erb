@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+<% if current_user %>
+  <div class="name"> You are logged in as: <%= current_user.first_name %></div>
+  <div class="logout"> <%= link_to 'Log Out', '/logout' %> </div>
+  <div class="home"><%= link_to 'Home', '/' %> </div>
+  <div class="directory"><%= link_to 'Directory', '../users' %> </div>
+  <br></br>
+  <p>
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </p>
+  <br></br>
+  <p>
+    <strong>Content:</strong>
+    <td><%= markdown(@article.content) %></td>
+  </p>
+  <br></br>
+  <p>
+    <strong>Tag:</strong>
+    <td><%= @article.tag.title %></td>
+  </p>
+  <p>
+    <strong>Email:</strong>
+    <td><%= mail_to @article.user.email %></td>
+  </p>
+  <br></br>
+  <h4>Published <%= time_ago_in_words @article.created_at %> ago by <%= @article.user.first_name %></h4>
+  <h4>Updated <%= time_ago_in_words @article.updated_at %> ago by <%= @article.user.first_name %></h4>
+
+  <%= link_to 'Edit', edit_article_path(@article) %>
+  <%= link_to 'Back', articles_path %>
+<% else %>
+  <div class="home"><%= link_to 'Home', '/' %> </div>
+  <%= link_to 'Sign Up', new_user_path %>
+
+
+
+<br></br>
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+<br></br>
+<p>
+  <strong>Content:</strong>
+  <td><%= markdown(@article.content) %></td>
+</p>
+<br></br>
+<p>
+  <strong>Tag:</strong>
+  <td><%= @article.tag.title %></td>
+</p>
+<br></br>
+
+
+
+<h4>Published <%= time_ago_in_words @article.created_at %> ago
+    by <%= "#{@article.user.first_name}" %></h4>
+<h4>Updated <%= time_ago_in_words @article.updated_at %> ago by
+    by <%= "#{@article.user.first_name}" %></h4>
+    <%= link_to 'Back', '/' %>
+<% end %>

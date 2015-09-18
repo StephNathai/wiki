@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<% if current_user %>
+  <div class="name"> You are logged in as: <%= current_user.first_name %></div>
+  <div class="logout"> <%= link_to 'Log Out', '/logout' %> </div>
+  <div class="home"><%= link_to 'Home', '/' %> </div>
+  <%= link_to 'Edit', edit_user_path(@user) %>
+<% else %>
+  <div class="home"><%= link_to 'Home', '/' %> </div>
+<% end %>
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <td><%= mail_to @user.email %></td>
+</p>
+
+
+<%# link_to user.article, user_article_path(article.user) %>
+
+
+<%= link_to 'Back', users_path %>
