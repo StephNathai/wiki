@@ -7,3 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create [{ first_name: 'Steph', last_name: 'Nathai', email: 'steph@ga.co', password: 'password', password_confirmation: 'password' }]
+
+Tag.create[{title: 'Restaurants'},
+           {title: 'Housing'}]
