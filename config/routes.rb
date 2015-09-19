@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :tags
   resources :users
 
-  root 'articles#index'
+  root 'users#main'
   get '/logout' => 'users#logout'
   get '/login' => 'users#new'
   post '/login' => 'users#login_post'

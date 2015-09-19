@@ -7,12 +7,14 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    @articles = Article.order("created_at DESC")
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
+    @articles = Article.order("created_at DESC")
   end
 
 

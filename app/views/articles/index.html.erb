@@ -3,8 +3,6 @@
 <div class="background">
   <div class="name"> You are logged in as: <%= link_to(current_user.first_name, user_path(current_user)) %></div>
   <div class="logout"> <%= link_to 'Log Out', '/logout' %> </div>
-  <div class="home"><%= link_to 'Home', '/' %> </div>
-  <div class="directory"><%= link_to 'Directory', '/users' %> </div>
   <div class="title">
     <div class="welcome">
       <h1>LIC Hub: Articles</h1>
@@ -15,44 +13,46 @@
   </div>
   <div class="nav_strip">
     <div class="nav_link">
-      <li class="link"> <%= link_to 'The Hood', '/the_hood' %></li>
-      <li class="link"><%= link_to 'Articles', '/articles' %></li>
-      <li class="link"><%= link_to 'About Us', '/about_us' %></li>
+      <li class="link"><%= link_to 'Home', '/main' %></li>
+      <li class="link"><%= link_to 'Directory', '/users' %> </li>
+      <li class="link"><%= link_to 'New Article', new_article_path %></li>
     </div>
   </div>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Content</th>
-        <th>Tag</th>
-        <th>Published By</th>
-        <th>Last Updated</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @articles.each do |article| %>
-      <% tag_title = "#{article.tag.title}" %>
+  <div class="table">
+    <table class="table">
+      <thead>
         <tr>
-          <td><%= article.title %></td>
-          <td><%= markdown(article.content) %></td>
-          <td><%= link_to tag_title, article.tag %>
-          <td>Published <%= time_ago_in_words article.created_at %> ago by <%= article.user.first_name %></td>
-          <td>Updated <%= time_ago_in_words article.updated_at %> ago by <%= article.user.first_name %></td>
-          <% if article.user == current_user %>
-          <td><%= link_to 'Show', article %></td>
-          <td><%= link_to 'Edit', edit_article_path(article) %></td>
-          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
+          <th>Title:</th>
+          <th>Content:</th>
+          <th>Category:</th>
+          <th>Published By:</th>
+          <th>Last Edited:</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-      <%= link_to 'New Article', new_article_path %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @articles.each do |article| %>
+          <% tag_title = "#{article.tag.title}" %>
+          <tr>
+            <% full_name = "#{article.user.first_name}" + " " + "#{article.user.last_name}" %>
+            <td><%= article.title %></td>
+            <td><%= truncate(strip_tags(markdown("#{article.content}")),length:50) %></td>
+            <td><%= link_to tag_title, article.tag %>
+            <td><%= full_name %></td>
+            <td>Updated <%= time_ago_in_words article.updated_at %></td>
+            <% if article.user == current_user %>
+            <td><%= link_to 'Show', article %></td>
+            <td><%= link_to 'Edit', edit_article_path(article) %></td>
+            <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
 <% else %>
+
 <div class="background">
   <div class="login">
     <div class="new_user">
@@ -76,7 +76,7 @@
 
     <div class="title">
       <div class="welcome">
-        <h1>Welcome to LIC Hub!</h1>
+        <h1>LIC Hub: Articles</h1>
       </div>
       <div class="description">
         <h3>(a collaboration of both neighborhood facts and opinions)</h3>
@@ -84,32 +84,31 @@
     </div>
     <div class="nav_strip">
       <div class="nav_link">
+        <li class="link"><%= link_to 'Home', '/main' %></li>
         <li class="link"> <%= link_to 'The Hood', '/the_hood' %></li>
-        <li class="link"><%= link_to 'Articles', '/articles' %></li>
         <li class="link"><%= link_to 'About Us', '/about_us' %></li>
       </div>
     </div>
   </div>
   <div class="table">
     <table class="table">
-      <div
-      <thead class="table_content">
+      <thead>
         <tr>
-          <th>Title</th>
-          <th>Content</th>
-          <th>Category</th>
-          <th>Published By</th>
-          <th>Last Edited</th>
+          <th>Title:</th>
+          <th>Content:</th>
+          <th>Category:</th>
+          <th>Published By:</th>
+          <th>Last Edited:</th>
           <th colspan="3"></th>
         </tr>
       </thead>
-      <tbody class="table_content">
+      <tbody>
         <% @articles.each do |article| %>
           <% tag_title = "#{article.tag.title}" %>
           <tr>
             <% full_name = "#{article.user.first_name}" + " " + "#{article.user.last_name}" %>
             <td><%= article.title %></td>
-            <td><%= markdown("#{article.content}") %></td>
+            <td><%= truncate(strip_tags(markdown("#{article.content}")),length:50) %></td>
             <td><%= link_to tag_title, article.tag %>
             <td><%= full_name %></td>
             <td>Updated <%= time_ago_in_words article.updated_at %></td>
