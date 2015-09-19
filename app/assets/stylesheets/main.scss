@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Rock+Salt);
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
 
 .background {
   /* Set up positioning */
@@ -61,8 +62,14 @@
   color: white;
   text-align: center;
   z-index: 1;
-  font-family: 'Rock Salt', cursive, sans-serif;
+  font-family: 'Indie Flower', cursive, sans-serif;
+  font-size: 25px;
 }
+
+div.welcome h1 {
+  margin-top: 10px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -82,7 +89,7 @@
   width: 100%;
   clear:both;
   margin-bottom: 2%;
-  margin-right: 2%;
+  margin-right: 1%;
   color: white;
 }
 
@@ -92,6 +99,14 @@
   width: 50%;
   text-align: right;
   margin-bottom: 3%;
+}
+
+div.logout a {
+  margin-right: 1%;
+}
+
+div.home a, div.directory a {
+  margin-left: 1%;
 }
 .name {
   position: relative;
@@ -144,9 +159,10 @@ div li {
   color: white;
   text-align: center;
   z-index: 1;
-  font-family: 'Rock Salt', cursive, sans-serif;
+  font-family: 'Indie Flower', cursive, sans-serif;
   float: left;
   width: 100%;
+  font-size: 20px;
 }
 
 div.nav_strip {
@@ -157,6 +173,10 @@ div.name a {
   color: #FF8080;
 }
 
-div.logout a, div.home a, div.directory a {
+div.logout a, div.home a, div.directory a, div.new_user a{
   color: white;
+}
+
+li.link a {
+  color:white;
 }
