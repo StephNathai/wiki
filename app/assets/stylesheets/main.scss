@@ -23,7 +23,7 @@
     url(http://i1148.photobucket.com/albums/o567/spontandom/lic_zpsc2ak8ir7.jpg);
   background-size: cover;
 }
-header {
+.title {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -34,7 +34,7 @@ header {
   top: 15%;
   bottom: 70%;
 }
-header::before {
+.title::before {
   content: "";
   position: absolute;
   top: 0;
@@ -46,7 +46,7 @@ header::before {
   -webkit-filter: blur(12px);
   filter: blur(12px);
 }
-header::after {
+.title::after {
   content: "";
   position: absolute;
   top: 0;
@@ -73,4 +73,90 @@ header::after {
   text-align: center;
   width: 100%;
   font-family: 'Rock Salt', cursive, sans-serif;
+}
+
+.login {
+  position: relative;
+  float: right;
+  text-align: right;
+  width: 100%;
+  clear:both;
+  margin-bottom: 2%;
+  margin-right: 2%;
+  color: white;
+}
+
+.logout {
+  float: right;
+  position: relative;
+  width: 50%;
+  text-align: right;
+  margin-bottom: 3%;
+}
+.name {
+  position: relative;
+  width: 50%;
+  float: left;
+  clear: both;
+  color: white;
+}
+.nav_strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10px;
+  background: inherit;
+  background-attachment: fixed;
+  top: 40%;
+  bottom: 60%;
+}
+.nav_strip::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  background-attachment: fixed;
+  -webkit-filter: blur(12px);
+  filter: blur(12px);
+}
+.nav_strip::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25)
+}
+
+div li {
+  display: inline;
+  list-style: none;
+  margin-right: 10%;
+  margin-left: 4%;
+}
+.nav_link {
+  position: relative;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  font-family: 'Rock Salt', cursive, sans-serif;
+  float: left;
+  width: 100%;
+}
+
+div.nav_strip {
+  padding-bottom: 35px;
+}
+
+div.name a {
+  color: #FF8080;
+}
+
+div.logout a, div.home a, div.directory a {
+  color: white;
 }

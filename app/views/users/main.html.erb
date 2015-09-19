@@ -1,10 +1,65 @@
+<p id="notice"><%= notice %></p>
+<% if current_user %>
 <div class="background">
-  <header>
-    <div class="welcome">
-      <h1>Welcome to LIC Hub!</h1>
+  <div class="name"> You are logged in as: <%= link_to(current_user.first_name, user_path(current_user)) %></div>
+  <div class="logout"> <%= link_to 'Log Out', '/logout' %> </div>
+  <div class="home"><%= link_to 'Home', '/' %> </div>
+  <div class="directory"><%= link_to 'Directory', '/users' %> </div>
+    <div class="title">
+      <div class="welcome">
+        <h1>Welcome to LIC Hub!</h1>
+      </div>
+      <div class="description">
+        <h3>(a collaboration of both neighborhood facts and opinions)</h3>
+      </div>
     </div>
-    <div class="description">
-      <h3>(a collaboration of both neighborhood facts and opinions)</h3>
+    <div class="nav_strip">
+      <div class="nav_link">
+        <li>The Hood</li>
+        <li>Articles</li>
+        <li>Fun Facts</li>
+        <li>About Us</li>
+      </div>
     </div>
-  </header>
+
 </div>
+<% else %>
+<div class="background">
+  <div class="login">
+    <div class="new_user">
+      <%= link_to 'New User', new_user_path %>
+    </div>
+    <form action="/login" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+      <div>
+        <lable for="email">Email:</label>
+        <input name="email" type="text" />
+      </div>
+      <div>
+        <lable for="password">Password:</label>
+        <input name="password" type="password" />
+      </div>
+      <div>
+        <input type="submit" />
+      </div>
+    </form>
+  </div>
+
+    <div class="title">
+      <div class="welcome">
+        <h1>Welcome to LIC Hub!</h1>
+      </div>
+      <div class="description">
+        <h3>(a collaboration of both neighborhood facts and opinions)</h3>
+      </div>
+    </div>
+    <div class="nav_strip">
+      <div class="nav_link">
+        <li>The Hood</li>
+        <li>Articles</li>
+        <li>Fun Facts</li>
+        <li>About Us</li>
+      </div>
+    </div>
+  </div>
+<% end %>
