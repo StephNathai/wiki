@@ -43,27 +43,27 @@
 
 <% else %>
 <div class="login">
-<div class="new_user"><%= link_to 'New User', new_user_path %></div>
-
-<form action="/login" method="post" class="login">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-  <div>
-    <lable for="email">Email:</label>
-    <input name="email" type="text" />
+  <div class="new_user">
+    <%= link_to 'New User', new_user_path %>
   </div>
-  <div>
-    <lable for="password">Password:</label>
-    <input name="password" type="password" />
-  </div>
-  <div>
-    <input type="submit" />
-  </div>
-</form>
+  <form action="/login" method="post" class="login">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <div>
+      <lable for="email">Email:</label>
+      <input name="email" type="text" />
+    </div>
+    <div>
+      <lable for="password">Password:</label>
+      <input name="password" type="password" />
+    </div>
+    <div>
+      <input type="submit" />
+    </div>
+  </form>
 </div>
-<div class="title">
-  <h1 class="title">Welcome to LIC Wiki!!</h1>
+<div class="heading">
+  <h1>Welcome to LIC Wiki!</h1>
 </div>
-
 <div class="table">
   <table class="table">
     <thead>
@@ -72,11 +72,10 @@
         <th>Content</th>
         <th>Category</th>
         <th>Published By</th>
-        <th>Last Edited By</th>
+        <th>Last Edited</th>
         <th colspan="3"></th>
       </tr>
     </thead>
-
     <tbody>
       <% @articles.each do |article| %>
         <% tag_title = "#{article.tag.title}" %>
@@ -85,11 +84,10 @@
           <td><%= article.title %></td>
           <td><%= markdown("#{article.content}") %></td>
           <td><%= link_to tag_title, article.tag %>
-          <td>Published <%= time_ago_in_words article.created_at %> ago by <%= article.user.first_name %></td>
-          <td>Updated <%= time_ago_in_words article.updated_at %> ago by <%= article.user.first_name %></td>
+          <td><%= full_name %></td>
+          <td>Updated <%= time_ago_in_words article.updated_at %></td>
           <td><%= link_to 'Show', article %></td>
         </tr>
-
       <% end %>
     </tbody>
   </table>

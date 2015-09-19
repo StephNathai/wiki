@@ -1,0 +1,30 @@
+.background {
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* darken background */
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(http://i1148.photobucket.com/albums/o567/spontandom/lic_zpsc2ak8ir7.jpg);
+}
+
+.welcome {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  margin-left: -140px;
+  color: white;
+}

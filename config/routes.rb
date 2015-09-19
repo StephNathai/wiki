@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'user/:id/articles' => 'user#articles', :as => :user_articles
   get 'tag/:id/articles' => 'tag#articles', :as => :tag_articles
 
+  get '/main' => 'users#main'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
