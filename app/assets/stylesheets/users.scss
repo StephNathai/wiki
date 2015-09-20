@@ -32,3 +32,165 @@ div.label {
   position: relative;
   margin-top: 3%;
 }
+
+div.body_container_1 {
+  position: absolute;
+  bottom: 0;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 500px;
+  background: inherit;
+  background-attachment: fixed;
+  top: 45%;
+  bottom: 3%;
+}
+div.body_container_1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 100%;
+  background: inherit;
+  background-attachment: fixed;
+  -webkit-filter: blur(12px);
+  filter: blur(12px);
+}
+div.body_container_1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25)
+}
+
+div.body_title_signin {
+  position: relative;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-variant: small-caps;
+  font-size: 25px;
+  margin-bottom: 25px;
+  width: 500px;
+}
+div.body_description_signin {
+  position: relative;
+  color: white;
+  text-align: left;
+  z-index: 1;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 20px;
+  list-style-type: square;
+  line-height: normal;
+  text-decoration: none;
+  width: 500px;
+  margin-left: 5%;
+}
+
+div.body_container_2 {
+  position: absolute;
+  bottom: 0;
+  margin-left: 3%;
+  margin-right: 5%;
+  width: 500px;
+  background: inherit;
+  background-attachment: fixed;
+  top: 45%;
+  bottom: 3%;
+  left:55%;
+}
+div.body_container_2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 100%;
+  background: inherit;
+  background-attachment: fixed;
+  -webkit-filter: blur(12px);
+  filter: blur(12px);
+}
+div.body_container_2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25)
+}
+
+div.body_title_signup {
+  position: relative;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-variant: small-caps;
+  font-size: 25px;
+  margin-bottom: 25px;
+  width: 500px;
+}
+div.body_description_signup {
+  position: relative;
+  color: white;
+  text-align: left;
+  z-index: 1;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 20px;
+  list-style-type: square;
+  line-height: normal;
+  text-decoration: none;
+  width: 500px;
+  margin-left: 5%;
+}
+
+.signin_email {
+  width: 380px;
+  height: 21px;
+  margin-bottom: 2%;
+  border-bottom-width: 0px;
+  padding-bottom: 0px;
+}
+
+.signin_password {
+  width: 345px;
+  height: 21px;
+  margin-bottom: 5%;
+  border-bottom-width: 0px;
+  padding-bottom: 0px;
+}
+
+input#user_first_name {
+  width: 343px;
+  height: 21px;
+  border-bottom-width: 0px;
+  padding-bottom: 0px;
+}
+
+input#user_last_name {
+  width: 346px;
+  height: 21px;
+  border-bottom-width: 0px;
+  padding-bottom: 0px;
+}
+
+input#user_email {
+  width: 386px;
+  height: 21px;
+  border-bottom-width: 0px;
+  padding-bottom: 0px;
+}
+
+input#user_password {
+  width: 351px;
+  height: 21px;
+  border-bottom-width: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 5%;
+}
