@@ -245,6 +245,7 @@ div.body_form{
   z-index: 1;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 17px;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 input#article_title {
@@ -279,4 +280,17 @@ div.field a {
 
 div.actions {
   margin-top: 1%;
+}
+
+div.body_form_container {
+  position: absolute;
+  bottom: 0;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  background-attachment: fixed;
+  top: 50%;
+  bottom: 10%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
