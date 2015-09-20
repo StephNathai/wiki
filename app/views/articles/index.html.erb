@@ -37,7 +37,7 @@
             <% full_name = "#{article.user.first_name}" + " " + "#{article.user.last_name}" %>
             <td><%= article.title %></td>
             <td><%= truncate(strip_tags(markdown("#{article.content}")),length:50) %></td>
-            <td><%= link_to tag_title, article.tag %>
+            <td><%= link_to tag_title, article.tag %></td>
             <td><%= full_name %></td>
             <td>Updated <%= time_ago_in_words article.updated_at %></td>
             <td><%= link_to 'Show', article %></td>
@@ -109,7 +109,7 @@
             <% full_name = "#{article.user.first_name}" + " " + "#{article.user.last_name}" %>
             <td><%= article.title %></td>
             <td><%= truncate(strip_tags(markdown("#{article.content}")),length:50) %></td>
-            <td><%= link_to tag_title, article.tag %>
+            <td><%= link_to tag_title, article.tag %> </td>
             <td><%= full_name %></td>
             <td>Updated <%= time_ago_in_words article.updated_at %></td>
             <td><%= link_to 'Show', article %></td>
