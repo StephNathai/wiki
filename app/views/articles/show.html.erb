@@ -98,6 +98,7 @@
           <% full_name = @article.user.first_name + " " + @article.user.last_name %>
           <p>Published <%= time_ago_in_words @article.created_at %> ago by: <%= full_name %></p>
           <p>Updated <%= time_ago_in_words @article.updated_at %> ago </p>
+          <%= link_to 'Back', articles_path %>
         </div>
       </div>
   </div>
