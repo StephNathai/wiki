@@ -32,8 +32,8 @@
   padding: 20px 10px;
   background: inherit;
   background-attachment: fixed;
-  top: 15%;
-  bottom: 70%;
+  top: 10%;
+  bottom: 75%;
 }
 .title::before {
   content: "";
@@ -123,8 +123,8 @@ div.home a, div.directory a {
   padding: 20px 10px;
   background: inherit;
   background-attachment: fixed;
-  top: 35%;
-  bottom: 60%;
+  top: 30%;
+  bottom: 70%;
 }
 .nav_strip::before {
   content: "";
@@ -184,13 +184,12 @@ li.link a {
 div.body_container {
   position: absolute;
   bottom: 0;
-   margin-left: 10%;
+  margin-left: 10%;
   margin-right: 10%;
   width: 80%;
-  // padding: 20px 10px;
   background: inherit;
   background-attachment: fixed;
-  top: 50%;
+  top: 45%;
   bottom: 10%;
 }
 div.body_container::before {
@@ -246,6 +245,7 @@ div.body_form{
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 17px;
   background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
 }
 
 input#article_title {
@@ -258,9 +258,9 @@ input#article_title {
 
 textarea#article_content {
   margin-top: 1%;
-  margin-left: 1%;
+  margin-left: 8px;
   width: 90%;
-  height: 60px;
+  height: 140px;
 }
 
 div.field {
@@ -289,8 +289,8 @@ div.body_form_container {
   margin-right: 10%;
   width: 80%;
   background-attachment: fixed;
-  top: 50%;
-  bottom: 10%;
+  top: 45%;
+  bottom: 6%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
 }

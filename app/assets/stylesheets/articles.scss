@@ -9,7 +9,7 @@ div.table {
   position: absolute;
   width: 96%;
   background-attachment: fixed;
-  top: 50%;
+  top: 45%;
   bottom: 5%;
   left: 1.5%;
 
@@ -47,9 +47,9 @@ tbody, thead {
 
 tbody {
   overflow:auto;
-  height: 80%;
   padding-bottom: 7%;
   background-color: rgba(0, 0, 0, 0.4);
+  height:330px;
 }
 
 thead {
@@ -74,21 +74,15 @@ tbody.users_head tr td {
   font-size: 15px;
   text-align: left;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  padding-bottom: 4%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   width: 180px;
 }
 
-div.body_form_container {
-  position: absolute;
-  bottom: 0;
-  margin-left: 10%;
-  margin-right: 10%;
-  width: 80%;
-  // padding: 20px 10px;
-  background: inherit;
-  background-attachment: fixed;
-  top: 50%;
-  bottom: 10%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+tbody.users_head {
+  height:330px;
+}
+
+thead.users_head {
+  height:60px;
 }
