@@ -55,7 +55,7 @@ class ArticlesController < ApplicationController
         format.html { render :edit }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
-    end unless current_user == @article.user
+    end #unless current_user == @article.user
   end
 
   # DELETE /articles/1
