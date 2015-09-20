@@ -33,15 +33,20 @@ class UsersController < ApplicationController
     else
       user_params = params.require(:user).permit(:first_name, :last_name, :email, :password)
       @user = User.new(user_params)
+
+      respond_to do |format|
       if @user.valid?
         @user.save
         session[:user_id] = @user.id
-        redirect_to user_url(@user)
+        format.html { redirect_to @user, notice: 'Article was successfully created.' }
+        format.json { render :show, status: :created, location: @user }
       else
-        render :new
+        format.html { render :new }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
+end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
@@ -71,7 +76,8 @@ class UsersController < ApplicationController
     if current_user
       redirect_to '/'
     else
-      render :login
+      format.html { render :edit }
+      format.json { render json: @user.errors, status: :unprocessable_entity }
     end
   end
 
