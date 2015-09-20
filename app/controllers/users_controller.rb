@@ -66,7 +66,7 @@ class UsersController < ApplicationController
 
   def login
     if current_user
-      redirect_to '/articles'
+      redirect_to '/'
     else
       render :login
     end
@@ -78,7 +78,7 @@ class UsersController < ApplicationController
     if @user
       if @user.authenticate(params[:password])
         session[:user_id] = @user.id
-        redirect_to '/articles'
+        redirect_to '/'
       else
         redirect_to '/'
       end

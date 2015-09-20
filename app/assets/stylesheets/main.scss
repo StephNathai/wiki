@@ -148,7 +148,7 @@ div.home a, div.directory a {
   background: rgba(0, 0, 0, 0.25)
 }
 
-div li {
+div.nav_link li {
   display: inline;
   list-style: none;
   margin-right: 10%;
@@ -179,4 +179,104 @@ div.logout a, div.home a, a, div.new_user a {
 
 li.link a {
   color:white;
+}
+
+div.body_container {
+  position: absolute;
+  bottom: 0;
+   margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  // padding: 20px 10px;
+  background: inherit;
+  background-attachment: fixed;
+  top: 50%;
+  bottom: 10%;
+}
+div.body_container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  background-attachment: fixed;
+  -webkit-filter: blur(12px);
+  filter: blur(12px);
+}
+div.body_container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25)
+}
+
+div.body_title {
+  position: relative;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-variant: small-caps;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+div.body_description ul {
+  position: relative;
+  color: white;
+  text-align: left;
+  z-index: 1;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 20px;
+  list-style-type: square;
+  line-height: normal;
+  text-decoration: none;
+}
+
+div.body_form{
+  position: relative;
+  color: white;
+  text-align: left;
+  z-index: 1;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 17px;
+}
+
+input#article_title {
+  width: 90%;
+  height: 25px;
+  margin-left: 35px;
+  margin-top: 1%;
+
+}
+
+textarea#article_content {
+  margin-top: 1%;
+  margin-left: 1%;
+  width: 90%;
+  height: 60px;
+}
+
+div.field {
+  margin-bottom: 15px;
+}
+
+select#article_tag_id {
+  margin-top: 1%;
+  margin-left: 39px;
+  width: 150px;
+}
+
+div.field a {
+  margin-left: 20px;
+  color: white;
+}
+
+div.actions {
+  margin-top: 1%;
 }

@@ -12,7 +12,7 @@ div.table {
   top: 50%;
   bottom: 5%;
   left: 1.5%;
-  background-color: rgba(0, 0, 0, 0.4);
+
 }
 
 table.table {
@@ -27,7 +27,7 @@ td {
   text-align: left;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   padding-bottom: 4%;
-  width: 20.5%;
+  width: 21.83%;
 }
 
 th {
@@ -35,18 +35,45 @@ th {
   font-size: 17px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-variant: small-caps;
-  padding-bottom: 3%;
-  width: 20%;
+  padding-bottom: 2%;
+  width: 22.83%;
 
 }
 
-tbody, thead{
+tbody, thead {
   display:block;
+  margin-left: 1%;
 }
 
 tbody {
   overflow:auto;
   height: 80%;
   padding-bottom: 7%;
-  margin-left: 1%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+thead {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+table.table a {
+  color: white;
+}
+
+thead.users_head tr th {
+  text-align: left;
+  font-size: 17px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-variant: small-caps;
+  padding-bottom: 2%;
+  width: 160px;
+
+}
+
+tbody.users_head tr td {
+  font-size: 15px;
+  text-align: left;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  padding-bottom: 4%;
+  width: 180px;
 }

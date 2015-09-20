@@ -3,8 +3,6 @@
 <div class="background">
   <div class="name"> You are logged in as: <%= link_to(current_user.first_name, user_path(current_user)) %></div>
   <div class="logout"> <%= link_to 'Log Out', '/logout' %> </div>
-  <div class="home"><%= link_to 'Home', '/' %> </div>
-  <div class="directory"><%= link_to 'Directory', '/users' %> </div>
   <div class="title">
     <div class="welcome">
       <h1>Welcome to LIC Hub!</h1>
@@ -16,6 +14,7 @@
   <div class="nav_strip">
     <div class="nav_link">
       <li class="link"> <%= link_to 'The Hood', '/the_hood' %></li>
+      <li class="link"><%= link_to 'Directory', '/users' %> </li>
       <li class="link"><%= link_to 'Articles', '/articles' %></li>
       <li class="link"><%= link_to 'About Us', '/about_us' %></li>
     </div>

@@ -16,21 +16,21 @@
 
 
   <div class="field">
-    Editing as: <%= current_user.first_name %><br>
+    Editing as: <font color = #FF8080><%= current_user.first_name %></font><br>
 
   </div>
   <div class="field">
-    <%= f.label :tag %><br>
+    <%= f.label :tag %>
     <%= f.collection_select(:tag_id, @tags, :id, :title, :include_blank => 'Please select') %>
-    <%= link_to 'New Category', '/tags/new' %> </div>
+    <%= link_to 'New Tag', '/tags/new' %> </div>
   </div>
 
-  <div class="field">
-    <%= f.label :title %><br>
+  <div class="new_article_title">
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :content %><br>
+  <div class="new_article_content">
+    <%= f.label :content %>
     <%= f.text_area :content %>
   </div>
 
