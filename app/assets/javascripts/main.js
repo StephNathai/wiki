@@ -6,7 +6,7 @@ $(document).ready(function() {
   });
 
   $(".surprise" ).on("click", function() {
-    alert("Hope you enjoyed!");
+    alert("Hope you enjoyed! Shout out to Dennis and Pan for making this possible!");
   });
 
 
