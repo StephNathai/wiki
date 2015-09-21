@@ -189,7 +189,7 @@ div.body_container {
   width: 80%;
   background: inherit;
   background-attachment: fixed;
-  top: 45%;
+  top: 40%;
   bottom: 8%;
 }
 div.body_container::before {
@@ -222,7 +222,6 @@ div.body_title {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-variant: small-caps;
   font-size: 25px;
-  margin-bottom: 25px;
 }
 
 div.body_description ul {
@@ -245,7 +244,7 @@ div.body_form{
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 17px;
   background-color: rgba(0, 0, 0, 0.4);
-  height: 250px;
+  height: 364px;
   overflow: auto;
 }
 
@@ -290,8 +289,8 @@ div.body_form_container {
   margin-right: 10%;
   width: 80%;
   background-attachment: fixed;
-  top: 45%;
-  bottom: 6%;
+  top: 41%;
+  bottom: 4%;
   // overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -336,4 +335,9 @@ div.surprise {
   left: 180px;
   top: 450px;
 
+}
+
+div.body_title h4 {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
