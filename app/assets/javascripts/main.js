@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $(".welcome" ).hover(function() {
+  $("li" ).hover(function() {
     $( this ).fadeOut( 200 );
     $( this ).fadeIn( 500 );
   });
