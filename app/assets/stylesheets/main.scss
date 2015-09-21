@@ -190,7 +190,7 @@ div.body_container {
   background: inherit;
   background-attachment: fixed;
   top: 45%;
-  bottom: 6%;
+  bottom: 8%;
 }
 div.body_container::before {
   content: "";
@@ -245,7 +245,8 @@ div.body_form{
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 17px;
   background-color: rgba(0, 0, 0, 0.4);
-  height: 100%;
+  height: 250px;
+  overflow: auto;
 }
 
 input#article_title {
@@ -264,7 +265,7 @@ textarea#article_content {
 }
 
 div.field {
-  margin-bottom: 15px;
+  margin-bottom: 3%;
 }
 
 select#article_tag_id {
@@ -326,4 +327,13 @@ div.body_description a {
 div.body_description_signup a {
   font-size: 14px;
   color: #336699;
+}
+
+div.surprise {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  left: 180px;
+  top: 450px;
+
 }
