@@ -36,8 +36,8 @@
           <td><%= user.first_name %></td>
           <td><%= user.last_name %></td>
           <td><%= mail_to user.email %></td>
-          <td><%= link_to 'Show', user %></td>
           <% if user == current_user %>
+          <td><%= link_to 'Show', user %></td>
           <td><%= link_to 'Edit', edit_user_path(user) %></td>
           <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>
@@ -49,40 +49,50 @@
 </div>
 <% else %>
 <div class="background">
-  <div class="login">
-    <div class="new_user">
-      <%= link_to 'New User', new_user_path %>
+  <div class="title">
+    <div class="welcome">
+      <h1>LIC Hub: Sign In or Sign up!</h1>
     </div>
-    <form action="/login" method="post">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-      <div>
-        <lable for="email">Email:</label>
-        <input name="email" type="text" />
-      </div>
-      <div>
-        <lable for="password">Password:</label>
-        <input name="password" type="password" />
-      </div>
-      <div>
-        <input type="submit" />
-      </div>
-    </form>
-  </div>
-    <div class="title">
-      <div class="welcome">
-        <h1>Welcome to LIC Hub!</h1>
-      </div>
-      <div class="description">
-        <h3>(a collaboration of both neighborhood facts and opinions)</h3>
-      </div>
-    </div>
-    <div class="nav_strip">
-      <div class="nav_link">
-        <li class="link"><%= link_to 'Home', '/' %> </li>
-        <li class="link"> <%= link_to 'The Hood', '/the_hood' %></li>
-        <li class="link"><%= link_to 'Articles', '/articles' %></li>
-        <li class="link"><%= link_to 'About Us', '/about_us' %></li>
-      </div>
+    <div class="description">
+      <h3>(a collaboration of both neighborhood facts and opinions)</h3>
     </div>
   </div>
-<% end %>
+  <div class="nav_strip">
+    <div class="nav_link">
+      <li class="link"><%= link_to 'Home', '/' %></li>
+      <li class="link"><%= link_to 'Directory', '/users' %> </li>
+      <li class="link"><%= link_to 'Articles', '/articles' %></li>
+      <li class="link"> <%= link_to 'The Hood', '/the_hood' %></li>
+    </div>
+  </div>
+    <div class="body_container_1">
+      <div class="body_title_signin">
+        <h4>Sign In</h4>
+      </div>
+      <div class="body_description_signin">
+        <form action="/login" method="post" class="login_page">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+          <div>
+            <label for="email">Email:</label>
+            <input class="signin_email" name="email" type="text" />
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input class="signin_password" name="password" type="password" />
+          </div>
+          <div>
+            <input type="submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="body_container_2">
+      <div class="body_title_signup">
+        <h4>Sign Up</h4>
+      </div>
+      <div class="body_description_signup">
+        <p><%= link_to 'Click here to create your account', 'users/new' %><p>
+      </div>
+    </div>
+</div>
+<%end%>

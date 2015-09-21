@@ -16,13 +16,14 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    if current_user
-      redirect_to '/'
-    end
   end
 
   # GET /users/1/edit
   def edit
+    @user = User.find(params[:id])
+    if session[:user_id]
+      redirect_to user_url(session[:user_id])
+    end
   end
 
   # POST /users
@@ -111,4 +112,5 @@ end
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :password)
     end
+
 end
